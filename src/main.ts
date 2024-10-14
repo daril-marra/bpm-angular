@@ -1,5 +1,6 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
+import 'hammerjs';
 
 async function enableMocking() {
   //TODO: do this only for local development environment
