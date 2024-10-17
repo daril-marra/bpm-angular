@@ -7,16 +7,52 @@
 
   <mat-form-field class="input-field">
     <mat-label>Numero Rapporto</mat-label>
-    <input matInput placeholder="Numero Rapporto" type="text" formControlName="numRapporto">
+    <input matInput placeholder="Numero Rapporto" type="text" formControlName="numRapporto"
+      [readonly]="isNumRapportoDisabled" [ngClass]="{'text-disabled': isNumRapportoDisabled}">
   </mat-form-field>
 
   <mat-form-field class="input-field" *ngIf="categoriesList">
     <mat-label>Categoria</mat-label>
-    <mat-select formControlName="categoria">
-      <mat-option *ngFor="let cat of categoriesList" [value]="cat">{{cat}}</mat-option>
+    <mat-select formControlName="categoria" (selectionChange)="onCategorySelection($event)">
+      <mat-option *ngFor="let cat of categoriesList" [value]="cat.code">{{cat.label}}</mat-option>
     </mat-select>
   </mat-form-field>
+  <br>
 
+  <mat-form-field class="input-field">
+    <mat-label>Data inizio periodo</mat-label>
+    <input matInput [matDatepicker]="datepickerInizio" formControlName="dataInizio" [max]="today">
+    <mat-datepicker-toggle matIconSuffix [for]="datepickerInizio"></mat-datepicker-toggle>
+    <mat-datepicker #datepickerInizio>
+    </mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Data fine periodo</mat-label>
+    <input matInput [matDatepicker]="datepickerFine" formControlName="dataFine" [max]="today">
+    <mat-datepicker-toggle matIconSuffix [for]="datepickerFine"></mat-datepicker-toggle>
+    <mat-datepicker #datepickerFine>
+    </mat-datepicker>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field class="input-field">
+    <mat-label>Causale</mat-label>
+    <input matInput placeholder="Causale" type="text" formControlName="causale">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Importo €</mat-label>
+    <input matInput placeholder="00.00" type="text" formControlName="importo">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Data valuta</mat-label>
+    <input matInput [matDatepicker]="datepickerValuta" formControlName="dataValuta" [max]="today">
+    <mat-datepicker-toggle matIconSuffix [for]="datepickerValuta"></mat-datepicker-toggle>
+    <mat-datepicker #datepickerValuta>
+    </mat-datepicker>
+  </mat-form-field>
   <hr>
   <button mat-flat-button color="primary" (click)="onSubmit()" class="input-field">Cerca</button>
   <button mat-flat-button color="accent" (click)="reset()" class="input-field">Reset</button>
