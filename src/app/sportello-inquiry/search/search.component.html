@@ -1,0 +1,24 @@
+<form [formGroup]="searchForm">
+
+  <mat-form-field class="input-field">
+    <mat-label>Dipendenza</mat-label>
+    <input matInput placeholder="Dipendenza" type="text" formControlName="dipendenza">
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Numero Rapporto</mat-label>
+    <input matInput placeholder="Numero Rapporto" type="text" formControlName="numRapporto">
+  </mat-form-field>
+
+  <mat-form-field class="input-field" *ngIf="categoriesList">
+    <mat-label>Categoria</mat-label>
+    <mat-select formControlName="categoria">
+      <mat-option *ngFor="let cat of categoriesList" [value]="cat">{{cat}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <hr>
+  <button mat-flat-button color="primary" (click)="onSubmit()" class="input-field">Cerca</button>
+  <button mat-flat-button color="accent" (click)="reset()" class="input-field">Reset</button>
+
+</form>
