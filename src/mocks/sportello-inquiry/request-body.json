@@ -1,0 +1,26 @@
+{
+  "tracciaturaApplicativa": {
+    "codiceApplicazioneChiamante": "RA001",
+    "versioneApplicazioneChiamante": "1.2.5",
+    "idCorrelazione": "AA104",
+    "identificativoHostFisicoChiamante": "D99887700",
+    "identificativoTerminaleChiamante": "LAPR",
+    "identificativoUtenteChiamante": "ES03424",
+    "identificativoFilialeChiamante": "1",
+    "identificativoCassaChiamante": "1"
+  },
+  "contoCorrente": {
+    "codiceFiliale": "1234",
+    "categoria": "0",
+    "numero": "123456"
+  },
+  "filtriDiRicerca": {
+    "intervalloTemporale": {
+      "dataInizio": "2024-01-01",
+      "dataFine": "2024-10-17"
+    },
+    "codiceCausale": "18A",
+    "importoMovimento": "-0",
+    "dataValuta": "2024-06-03"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "contoCorrente": {
+    "codiceFiliale": "1234",
+    "categoria": "0",
+    "numero": "123456"
+  },
+  "dataFineEstrazione": "2024-10-17",
+  "ndg": "123456789",
+  "anagraficaNdg": "NOME COGNOME",
+  "descFilialeOperante": "string",
+  "descFilialeCedente": "string",
+  "socioBanca": true,
+  "saldoContabile": "0",
+  "movimentiContoCorrente": [
+    {
+      "identificativoMovimentoPerContoCorrente": "string",
+      "dateMovimento": {
+        "dataValuta": "2024-06-03",
+        "dataContabile": "2024-06-04"
+      },
+      "dataOraRegistrazione": "2024-06-03 12:00:00",
+      "dataDisponibilita": "2024-06-05",
+      "importo": "-0.09",
+      "causale": {
+        "codice": "=s8BPUFp.~\\p$$",
+        "descrizione": "'uyb/Q(U"
+      },
+      "codiceUnitaOperativaGenerante": "p",
+      "codiceEnteCassa": "string",
+      "descrizioneMovimento": "string"
+    },
+    {
+      "identificativoMovimentoPerContoCorrente": "string",
+      "dateMovimento": {
+        "dataValuta": "2024-03-11",
+        "dataContabile": "2024-03-13"
+      },
+      "dataOraRegistrazione": "2024-03-12 12:00:00",
+      "dataDisponibilita": "2024-03-13",
+      "importo": "10.50",
+      "causale": {
+        "codice": "fzxdtgsegsd",
+        "descrizione": "dcasferhrtadfvcx"
+      },
+      "codiceUnitaOperativaGenerante": "p",
+      "codiceEnteCassa": "string",
+      "descrizioneMovimento": "string"
+    }
+  ]
+}
