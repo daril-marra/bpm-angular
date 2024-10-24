@@ -3,4 +3,5 @@ export interface MovimentiTable {
   dataDisponibilita: Date;
   importo: string;
   causale?: string;
+  codiceBelfioreNazione?: string;
 }

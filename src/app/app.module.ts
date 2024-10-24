@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MovimentiTableComponent } from './sportello-inquiry/movimenti-table/movimenti-table.component';
 import localeIt from '@angular/common/locales/it'
 import { registerLocaleData } from '@angular/common';
+import { BelfiorePipe } from './sportello-inquiry/pipes/belfiore.pipe';
 registerLocaleData(localeIt)
 
 @NgModule({
@@ -18,7 +19,8 @@ registerLocaleData(localeIt)
     AppComponent,
     SearchComponent,
     SearchResultsComponent,
-    MovimentiTableComponent
+    MovimentiTableComponent,
+    BelfiorePipe,
   ],
   imports: [
     BrowserModule,

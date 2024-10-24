@@ -15,7 +15,7 @@ export class MovimentiTableComponent {
 
   _data: MovimentiTable[] = [];
 
-  displayedColumns: string[] = ["id", "dataDisponibilita", "importo", "causale"];
+  displayedColumns: string[] = ["id", "dataDisponibilita", "importo", "causale", "codiceBelfioreNazione"];
 
   mapData(source: definitions["MovimentiContoCorrente"][]): MovimentiTable[] {
     return source.map(src => {
@@ -23,7 +23,8 @@ export class MovimentiTableComponent {
         id: src.identificativoMovimentoPerContoCorrente,
         importo: src.importo,
         causale: src.causale?.descrizione,
-        dataDisponibilita: new Date(src.dataDisponibilita)
+        dataDisponibilita: new Date(src.dataDisponibilita),
+        codiceBelfioreNazione: src.codiceBelfiore,
       }
     })
   }

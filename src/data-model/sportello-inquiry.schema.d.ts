@@ -78,6 +78,7 @@ export interface definitions {
     codiceUnitaOperativaGenerante?: string;
     codiceEnteCassa?: string;
     descrizioneMovimento: string;
+    codiceBelfiore?: string;
   };
   ContoCorrente: {
     codiceFiliale: definitions["CodiceFiliale"];
