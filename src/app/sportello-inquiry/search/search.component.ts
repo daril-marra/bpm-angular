@@ -18,7 +18,6 @@ export class SearchComponent {
   isNumRapportoDisabled = false;
   today = new Date();
   oneMonthAgo?: Date;
-  results?: definitions["ElencoMovimenti"];
 
   constructor(
     private fb: FormBuilder,
@@ -46,9 +45,8 @@ export class SearchComponent {
     console.log(this.searchForm.valid);
     if(this.searchForm.valid) {
       this.searchService.search(this.extractFormData())
-        .subscribe(res => {
-          console.log(res)
-          this.results = res;
+        .subscribe({
+          error: () => alert("errore")
         });
     }
   }
