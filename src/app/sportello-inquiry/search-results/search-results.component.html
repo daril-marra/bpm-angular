@@ -1,1 +1,16 @@
-<p>search-results works!</p>
+<div *ngIf="res">
+  <p>
+    <strong>Anagrafica: </strong>
+    {{res.anagraficaNdg}}
+  </p>
+  <p>
+    <strong>NDG: </strong>
+    {{res.ndg}}
+  </p>
+  <p>
+    <strong>Saldo: </strong>
+    {{res.saldoContabile}} €
+  </p>
+  <br>
+  <app-movimenti-table *ngIf="res.movimentiContoCorrente" [data]="res.movimentiContoCorrente"></app-movimenti-table>
+</div>

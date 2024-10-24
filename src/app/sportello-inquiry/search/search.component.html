@@ -58,3 +58,7 @@
   <button mat-flat-button color="accent" (click)="reset()" class="input-field">Reset</button>
 
 </form>
+
+<hr>
+
+<app-search-results *ngIf="results" [res]="results"></app-search-results>

@@ -13,7 +13,7 @@
   "saldoContabile": "0",
   "movimentiContoCorrente": [
     {
-      "identificativoMovimentoPerContoCorrente": "string",
+      "identificativoMovimentoPerContoCorrente": "0",
       "dateMovimento": {
         "dataValuta": "2024-06-03",
         "dataContabile": "2024-06-04"
@@ -30,14 +30,14 @@
       "descrizioneMovimento": "string"
     },
     {
-      "identificativoMovimentoPerContoCorrente": "string",
+      "identificativoMovimentoPerContoCorrente": "1",
       "dateMovimento": {
         "dataValuta": "2024-03-11",
         "dataContabile": "2024-03-13"
       },
       "dataOraRegistrazione": "2024-03-12 12:00:00",
       "dataDisponibilita": "2024-03-13",
-      "importo": "10.50",
+      "importo": "100000.50",
       "causale": {
         "codice": "fzxdtgsegsd",
         "descrizione": "dcasferhrtadfvcx"

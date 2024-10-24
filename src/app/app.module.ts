@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -8,12 +8,17 @@ import { SearchResultsComponent } from './sportello-inquiry/search-results/searc
 import { MaterialModule } from './material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MovimentiTableComponent } from './sportello-inquiry/movimenti-table/movimenti-table.component';
+import localeIt from '@angular/common/locales/it'
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeIt)
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    MovimentiTableComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: "it" }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
