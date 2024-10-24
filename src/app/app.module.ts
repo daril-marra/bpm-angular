@@ -7,6 +7,7 @@ import { SearchComponent } from './sportello-inquiry/search/search.component';
 import { SearchResultsComponent } from './sportello-inquiry/search-results/search-results.component';
 import { MaterialModule } from './material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     MaterialModule,
     ReactiveFormsModule
   ],

@@ -1,4 +1,5 @@
 import { http, HttpResponse } from 'msw'
+import response from './sportello-inquiry/response.json'
 
 export const handlers = [
   http.get('/api/user', () => {
@@ -10,4 +11,7 @@ export const handlers = [
       username: 'DanCecc',
     })
   }),
+  http.post('/api/elenco-movimenti-conto-corrente', () => {
+    return HttpResponse.json(response)
+  })
 ]

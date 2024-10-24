@@ -2,6 +2,9 @@ import { CATEGORIE, categorieValidator, DEFAULT_CATEGORIA } from './../../../dat
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSelectChange } from '@angular/material/select';
+import { definitions } from '../../../data-model/sportello-inquiry.schema';
+import reqBody from '../../../mocks/sportello-inquiry/request-body.json';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-search',
@@ -16,7 +19,10 @@ export class SearchComponent {
   today = new Date();
   oneMonthAgo?: Date;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private searchService: SearchService,
+  ) {
 
     this.oneMonthAgo = new Date();
     this.oneMonthAgo.setMonth(this.oneMonthAgo.getMonth() -1)
@@ -37,6 +43,10 @@ export class SearchComponent {
     console.log(this.searchForm.value);
     console.log(this.searchForm);
     console.log(this.searchForm.valid);
+    if(this.searchForm.valid) {
+      this.searchService.search(this.extractFormData())
+        .subscribe(res => console.log(res));
+    }
   }
 
   reset() {
@@ -51,6 +61,20 @@ export class SearchComponent {
       this.searchForm.get('numRapporto')?.enable();
       // this.isNumRapportoDisabled = false;
     }
+  }
+
+  extractFormData(): definitions["RecuperaMovimentiRequest"] {
+    const req: any = {}
+    req.tracciaturaApplicativa = reqBody.tracciaturaApplicativa;
+    req.contoCorrente = {};
+    req.contoCorrente.codiceFiliale = this.searchForm.value?.dipendenza;
+    req.contoCorrente.numero = this.searchForm.value?.numRapporto;
+    req.contoCorrente.categoria = this.searchForm.value?.categoria;
+    req.filtriDiRicerca = {};
+    req.filtriDiRicerca.codiceCausale = this.searchForm.value?.causale || undefined;
+    req.filtriDiRicerca.importoMovimento = this.searchForm.value?.importo || undefined;
+    //TODO: mappa date
+    return req as definitions["RecuperaMovimentiRequest"];
   }
 
 }
