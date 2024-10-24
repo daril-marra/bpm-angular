@@ -1,13 +1,20 @@
+import { BelfioreService } from './../belfiore.service';
 import { Pipe, PipeTransform } from "@angular/core";
-import countries from "../../../mocks/countries/countries";
+import { map, Observable, of } from "rxjs";
 
-@Pipe({name: 'belfiore'})
+@Pipe({
+  name: 'belfiore',
+  pure: true
+})
 export class BelfiorePipe implements PipeTransform {
-  transform(value: string): string {
-    if(value) {
-      const result = countries.find(element => element.codiceBelfiore === value);
-      return result?.descrizione ?? value;
-    }
-    return '';
+
+  constructor(private belfioreService: BelfioreService) {}
+
+  transform(value: string|null): Observable<string> {
+    if(value == null) return of('');
+    return this.belfioreService.get(value)
+      .pipe(map(e => {
+        return e?.descrizione ?? value;
+      }))
   }
 }

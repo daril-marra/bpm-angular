@@ -1,5 +1,6 @@
-import { http, HttpResponse } from 'msw'
+import { http, HttpResponse, PathParams } from 'msw'
 import response from './sportello-inquiry/response.json'
+import countries from './countries/countries'
 
 export const handlers = [
   http.get('/api/user', () => {
@@ -13,5 +14,10 @@ export const handlers = [
   }),
   http.post('/api/elenco-movimenti-conto-corrente', () => {
     return HttpResponse.json(response)
+  }),
+  http.get('/api/belfiore/:belfiore', ({params}) => {
+    const belfiore = params["belfiore"];
+    const result = countries.find(element => element.codiceBelfiore === belfiore);
+    return HttpResponse.json(result)
   })
 ]

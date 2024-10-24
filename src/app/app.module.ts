@@ -12,6 +12,7 @@ import { MovimentiTableComponent } from './sportello-inquiry/movimenti-table/mov
 import localeIt from '@angular/common/locales/it'
 import { registerLocaleData } from '@angular/common';
 import { BelfiorePipe } from './sportello-inquiry/pipes/belfiore.pipe';
+import { BelfioreService } from './sportello-inquiry/belfiore.service';
 registerLocaleData(localeIt)
 
 @NgModule({
@@ -31,7 +32,8 @@ registerLocaleData(localeIt)
     ReactiveFormsModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: "it" }
+    { provide: LOCALE_ID, useValue: "it" },
+    BelfioreService,
   ],
   bootstrap: [AppComponent]
 })
