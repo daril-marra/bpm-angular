@@ -27,7 +27,8 @@
       },
       "codiceUnitaOperativaGenerante": "p",
       "codiceEnteCassa": "string",
-      "descrizioneMovimento": "string"
+      "descrizioneMovimento": "string",
+      "codiceBelfiore": "Z614"
     },
     {
       "identificativoMovimentoPerContoCorrente": "1",
@@ -44,7 +45,8 @@
       },
       "codiceUnitaOperativaGenerante": "p",
       "codiceEnteCassa": "string",
-      "descrizioneMovimento": "string"
+      "descrizioneMovimento": "string",
+      "codiceBelfiore": "Z120"
     }
   ]
 }
