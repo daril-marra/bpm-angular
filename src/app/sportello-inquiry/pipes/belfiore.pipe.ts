@@ -13,7 +13,7 @@ export class BelfiorePipe implements PipeTransform {
   transform(value: string|null): Observable<string> {
     if(value == null) return of('');
     return this.belfioreService.get(value)
-      .pipe(map(e => {
+      .pipe(map((e:any) => {
         return e?.descrizione ?? value;
       }))
   }
